@@ -4,3 +4,12 @@ GET {{Microservice_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+### POST: Create a new product
+POST {{Microservice_HostAddress}}/Product
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "New Product",
+  "price": 29.99
+}
