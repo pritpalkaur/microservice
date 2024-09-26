@@ -1,0 +1,72 @@
+@import "@app/colors";
+
+:host {
+	mat-sidenav-container {
+		height: 100%;
+	}
+
+	mat-sidenav {
+		width: 220px;
+		background-color: $black;
+		color: $white;
+
+		.nav-header {
+			display: inline-flex;
+			padding: 12px;
+			width: 100%;
+			align-items: center;
+			gap: 16px;
+			box-sizing: border-box;
+
+			img {
+				width: 46px;
+				height: 46px;
+			}
+
+			mat-label {
+				font-size: 22px;
+				font-weight: 500;
+			}
+		}
+
+		.mat-mdc-list-item:hover:not(.nav-active) {
+			background-color: $hover-bg;
+		}
+
+		::ng-deep .mdc-list-item {
+			&__content {
+				display: inline-flex;
+				align-items: center;
+				padding: 8px 12px;
+			}
+		}
+
+		::ng-deep .mat-mdc-list-item-unscoped-content {
+			display: inline-flex;
+			align-items: center;
+			font-size: 16px;
+			color: $white;
+
+			mat-icon {
+				margin-right: 12px;
+			}
+		}
+
+		.nav-active {
+			::ng-deep .mdc-list-item {
+				&__content {
+					background-color: $white;
+					border-radius: 12px;
+				}
+			}
+
+			::ng-deep .mat-mdc-list-item-unscoped-content {
+				color: $black;
+			}
+		}
+	}
+
+	app-recent-visit-movie {
+		padding: 18px;
+	}
+}

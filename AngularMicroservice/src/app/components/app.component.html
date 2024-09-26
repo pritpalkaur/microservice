@@ -1,0 +1,20 @@
+<!-- src/app/components/app.component.html -->
+<mat-sidenav-container class="sidenav-container">
+	<mat-sidenav #sidenav mode="side" opened>
+	  <div class="nav-header">
+		<img src="../assets/images/logo-icon.svg" />		
+	  </div>
+	  <mat-nav-list>
+		<a mat-list-item routerLink="/home" routerLinkActive="nav-active"><mat-icon>home</mat-icon>Home</a>
+		<a mat-list-item routerLink="/login" routerLinkActive="nav-active"><mat-icon>login</mat-icon>Login</a>
+		<a mat-list-item routerLink="/product" routerLinkActive="nav-active"><mat-icon>product</mat-icon>Products</a>
+		<a mat-list-item routerLink="/movies" routerLinkActive="nav-active"><mat-icon>movies</mat-icon>Movies</a>
+		<a mat-list-item routerLink="/logout" routerLinkActive="nav-active"><mat-icon>logout</mat-icon>Logout</a>
+
+	</mat-nav-list>
+	</mat-sidenav>
+	<mat-sidenav-content>
+	  <router-outlet></router-outlet>
+	</mat-sidenav-content>
+  </mat-sidenav-container>
+  
