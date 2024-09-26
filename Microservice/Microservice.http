@@ -1,9 +1,13 @@
 @Microservice_HostAddress = http://localhost:5194
 
-GET {{Microservice_HostAddress}}/weatherforecast/
+### GET: Retrieve all products
+GET {{Microservice_HostAddress}}/Product
 Accept: application/json
 
-###
+### GET: Retrieve a specific product by id
+GET {{Microservice_HostAddress}}/Product/3
+Accept: application/json
+
 ### POST: Create a new product
 POST {{Microservice_HostAddress}}/Product
 Content-Type: application/json
@@ -13,3 +17,16 @@ Content-Type: application/json
   "name": "New Product",
   "price": 29.99
 }
+
+### PUT: Update an existing product
+PUT {{Microservice_HostAddress}}/Product/3
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "Updated Product",
+  "price": 39.99
+}
+
+### DELETE: Delete an existing product
+DELETE {{Microservice_HostAddress}}/Product/3
