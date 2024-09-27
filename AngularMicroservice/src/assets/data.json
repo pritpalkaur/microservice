@@ -1,22 +1,78 @@
-  [
+{
+  "categories": [
+    {
+      "categoryId": 1,
+      "categoryName": "Electronics"
+    },
+    {
+      "categoryId": 2,
+      "categoryName": "Furniture"
+    },
+    {
+      "categoryId": 3,
+      "categoryName": "Clothing"
+    }
+  ],
+  "products": [
     {
       "productId": 1,
-      "productName": "Product1",
-      "prouctDescription": "Description",
+      "productName": "Laptop",
+      "productDescription": "High-end gaming laptop",
+      "price": 1200.00,
       "createdBy": "admin",
       "createdAt": "2024-08-19T18:23:54.437",
       "updatedBy": "admin",
       "updatedAt": "2024-08-19T18:23:54.437",
-      "genres": ["Cat1"]
+      "categoryId": 1,
+      "inventory": {
+        "quantity": 50,
+        "location": "Warehouse 1"
+      }
     },
     {
       "productId": 2,
-      "productName": "Product2",
-      "prouctDescription": "Description 2",
+      "productName": "Smartphone",
+      "productDescription": "Latest model smartphone",
+      "price": 800.00,
       "createdBy": "admin",
       "createdAt": "2024-08-19T18:23:54.437",
       "updatedBy": "admin",
       "updatedAt": "2024-08-19T18:23:54.437",
-      "genres": ["Crime", "Drama"]
+      "categoryId": 1,
+      "inventory": {
+        "quantity": 100,
+        "location": "Warehouse 1"
+      }
+    },
+    {
+      "productId": 3,
+      "productName": "Office Chair",
+      "productDescription": "Ergonomic office chair",
+      "price": 150.00,
+      "createdBy": "admin",
+      "createdAt": "2024-08-19T18:23:54.437",
+      "updatedBy": "admin",
+      "updatedAt": "2024-08-19T18:23:54.437",
+      "categoryId": 2,
+      "inventory": {
+        "quantity": 30,
+        "location": "Warehouse 2"
+      }
+    },
+    {
+      "productId": 4,
+      "productName": "T-shirt",
+      "productDescription": "Cotton T-shirt",
+      "price": 20.00,
+      "createdBy": "admin",
+      "createdAt": "2024-08-19T18:23:54.437",
+      "updatedBy": "admin",
+      "updatedAt": "2024-08-19T18:23:54.437",
+      "categoryId": 3,
+      "inventory": {
+        "quantity": 200,
+        "location": "Warehouse 1"
+      }
     }
   ]
+}

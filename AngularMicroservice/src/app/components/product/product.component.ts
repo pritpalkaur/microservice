@@ -9,11 +9,11 @@ import { Product } from '../../models/product.model';
 })
 export class ProductComponent implements OnInit {
   products: Product[] = [];
-  displayedColumns: string[] = ['productId', 'productName', 'prouctDescription', 'actions'];
+  displayedColumns: string[] = ['productId', 'productName', 'productDescription', 'actions'];
   dataSource: Product[] = [];
 
   // Properties for creating and editing products
-  newProduct: Product = { productId: 0, productName: '', prouctDescription: '' };
+  newProduct: Product = { productId: 0, productName: '', productDescription: '' };
   isEditing: boolean = false;
   editingProductId: number | null = null;
 
@@ -22,11 +22,12 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     this.loadProducts();
   }
-
+  
   loadProducts(): void {
     this.productService.getProducts().subscribe(
-      (data: Product[]) => {
-        this.products = data;
+      (data) => {
+        console.log('Fetched data:', data); // Log the entire response
+        this.products = data.products; // Accessing the products array
         this.dataSource = this.products;
       },
       error => {
@@ -34,6 +35,7 @@ export class ProductComponent implements OnInit {
       }
     );
   }
+
 
   addProduct(): void {
     this.productService.addProduct(this.newProduct).subscribe(
@@ -85,50 +87,8 @@ export class ProductComponent implements OnInit {
   }
 
   resetForm(): void {
-    this.newProduct = { productId: 0, productName: '', prouctDescription: '' };
+    this.newProduct = { productId: 0, productName: '', productDescription: '' };
     this.isEditing = false;
     this.editingProductId = null;
   }
 }
-
-
-
-
-
-// import { Component, OnInit } from '@angular/core';
-// import { ProductService } from '../../services/product.service';
-// import { Product } from '../../models/product.model'; // Assuming you have a Product model
-
-// @Component({
-//   selector: 'app-product-list',
-//   templateUrl: './product.component.html',
-//   styleUrls: ['./product.component.css']
-// })
-// export class ProductComponent implements OnInit {
-//   products: Product[] = [];
-//   displayedColumns: string[] = ['productId', 'productName', 'prouctDescription'];
-//   dataSource: Product[] = [];
-
-//   // Properties for creating and editing products
-//   newProduct: Product = { productId: 0, productName: '', productCat: '' };
-//   isEditing: boolean = false;
-//   editingProductId: number | null = null;
-
-//   constructor(private productService: ProductService) { }
-
-//   ngOnInit(): void {
-//     this.loadProducts();
-//   }
-
-//   loadProducts(): void {
-//     this.productService.getProducts().subscribe(
-//       (data: Product[]) => {
-//         this.products = data;
-//         this.dataSource = this.products;
-//       },
-//       error => {
-//         console.error('Error fetching products', error);
-//       }
-//     );
-//   }
-// }
