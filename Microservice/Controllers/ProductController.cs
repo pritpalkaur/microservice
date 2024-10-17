@@ -38,7 +38,7 @@ namespace Microservice.Controllers
         // POST: /Product
         [HttpPost]
         public IActionResult CreateProduct([FromBody] Product product)
-        {
+        {//this is update 
             if (product == null || !ModelState.IsValid)
                 return BadRequest("Invalid product data.");
 
